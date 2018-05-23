@@ -1,0 +1,13 @@
+<apex: page standardController="Account" recordSetVar="accounts" tabStyle="Account" extensions="Account_ctrl">
+    <apex: includeLightning />
+    <apex: slds />
+    <div id="lightning" />
+    <script>
+    $Lightning.use("c:CompanyTaggingApp", function() {
+        $Lightning.createComponent("c:CompanyTagging", { accountsIdsString: '{!accountIds}' }, "lightning",
+            function(cmp) {
+                console.log(cmp);                     
+            });                    
+    });
+    </script>
+</apex:page>
